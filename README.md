@@ -44,7 +44,10 @@ Check Docker
 
 	allpar "dpkg -l | grep docker- | grep ii" "dpkg -l | grep nvidia-docker | grep ii"
 
+Check Tensorflow version
+	
+	allpar "LD_LIBRARY_PATH=/usr/local/cuda/lib64 python -c 'import tensorflow; print(tensorflow.__version__)'"
+
 Test Tensorflow with CUDA x
 
-	allpar0 --transferfile testtensorflow.py ::: "python  testtensorflow.py /usr/local/cuda8.0"
-	
+	allpar0 --transferfile testtensorflow.py ::: "LD_LIBRARY_PATH=/usr/local/cuda/lib64 python testtensorflow.py"
