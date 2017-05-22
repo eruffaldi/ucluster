@@ -35,9 +35,19 @@ Check NVidia
 	
 	allpar nvidia-smi "nvcc --version" "ls -l /usr/local | grep cuda"
 
-Check only hardware
+Check only hardware (replace python with awk)
 
-	allpar "nvidia-smi -L"
+	allpar "nvidia-smi -L  | python -c \"import sys; print sys.stdin.readline().split('(')[0]\""
+	
+Example:
+
+	percro@pelars	GPU 0: Tesla K20m (UUID: GPU-84f5c163-ab4d-e52c-485f-298f9925313f)
+	percro@verebig	GPU 0: GeForce GTX 1080 (UUID: GPU-a7ea12b2-b450-2073-f8ed-cb36fbfc82e4)
+	percro@landolfi	GPU 0: GeForce GTX 770 (UUID: GPU-37da2463-dfd7-f642-5773-84db45ac1e2b)
+	percro@aurora	GPU 0: GeForce GTX 1080 (UUID: GPU-1b1c49ef-c38e-42fc-9fb3-7e070834dca1)
+	percro@peppoloni	GPU 0: GeForce GTX 760 Ti OEM (UUID: GPU-8ee6f382-6b6d-d483-f726-fca985e18bb3)
+	percro@bigdaddy	ssh: connect to host bigdaddy port 22: Network is unreachable
+
 
 Check percentage of GPU free, can be improved
 
