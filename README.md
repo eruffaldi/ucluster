@@ -35,6 +35,10 @@ Check NVidia
 	
 	allpar nvidia-smi "nvcc --version" "ls -l /usr/local | grep cuda"
 
+Check only hardware
+
+	allpar "nvidia-smi -L"
+
 Check percentage of GPU free, can be improved
 
 	allpar nvidia-smi
