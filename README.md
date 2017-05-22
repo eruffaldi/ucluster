@@ -75,6 +75,9 @@ Check Keras Default
 
 	allpar "python -c 'from keras import backend'"
 
+Work with sudo using explicit password
+
+	parallel --slf my_cluster --tty --onall ::: "echo PASSWORD | sudo -S pip install --upgrade pip"
 
 # Running our Leave 1 out
 
