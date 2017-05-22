@@ -37,8 +37,7 @@ Check NVidia
 
 Check only hardware (replace python with awk)
 
-	allpar "nvidia-smi -L  | python -c \"import sys; print sys.stdin.readline().split('(')[0]\""
-	
+	allpar "nvidia-smi --query-gpu=name --format=csv,noheader"	
 Example:
 
 	percro@pelars	GPU 0: Tesla K20m
