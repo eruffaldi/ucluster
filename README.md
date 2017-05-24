@@ -72,6 +72,11 @@ Check Tensorflow version
 	
 	allpar "LD_LIBRARY_PATH=/usr/local/cuda/lib64 python -c 'import tensorflow; print(tensorflow.__version__)'"
 
+Configure CUDA automatic
+
+	export LD_LIBRARY_PATH=/usr/local/cuda/lib64
+	export CUDA_HOME=/usr/local/cuda
+		
 Test Tensorflow with CUDA x
 
 	allpar0 --transferfile testtensorflow.py ::: "LD_LIBRARY_PATH=/usr/local/cuda/lib64 python testtensorflow.py"
