@@ -150,4 +150,5 @@ See Also: 	https://alliseesolutions.wordpress.com/2016/09/08/install-gpu-tensorf
 	export LD_LIBRARY_PATH=/usr/local/cuda-8.0/extra/CUPTI/lib64/
 	bazel build --config=opt --config=cuda //tensorflow/tools/pip_package:build_pip_package
 	bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
+	sudo pip install /tmp/tensorflow_pkg/tensorflow
 
